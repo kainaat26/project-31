@@ -31,22 +31,22 @@ function setup() {
   {
     plinko.push(new Plinko(j,100));
   } 
+
   for (var j = 40; j <=width-10; j=j+50)
   {
     plinko.push(new Plinko(j,150));
   } 
+
   for (var j = 15; j <=width-10; j=j+50)
   {
     plinko.push(new Plinko(j,200));
   } 
 
-//if(frameCount%60===0){
-// particle.push(new Particle(random(width/2-10,width/2+10,10,10)));
-//}
+
 }
 
 function draw() {
-  background("pink");  
+  background("grey");  
   Engine.update(engine);
 
   ground1.display();
@@ -61,8 +61,12 @@ function draw() {
   }
 
   
-  //for (var a = 0; a < particle.length; a++){
-//
- //   particle[a].display()
- // }
+  if(frameCount%60===0){
+    particle.push(new Particle(random(width/2-10,width/2+10),10,10));
+    }
+  
+  for (var a = 0; a < particle.length; a++){
+
+    particle[a].display()
+}
 }
